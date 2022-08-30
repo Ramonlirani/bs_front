@@ -1,13 +1,9 @@
-import React from 'react'
-
-import logo from '../assets/image/logo.png'
 import background from '../assets/image/background.jpg'
 import { Button, Flex, Heading, Image, Input, Link, VStack } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 
-export const Login = () => {
+export const Register = () => {
   const navigate = useNavigate()
-
   return (
     <Flex h='100vh'>
       <Image
@@ -24,21 +20,24 @@ export const Login = () => {
         <VStack
           backgroundColor='white'
           position={['inherit', 'inherit', 'absolute']}
-          right={['unset', 'unset', '200px']}
+          left={['unset', 'unset', '200px']}
           zIndex={1}
           p={8}
           borderRadius={20}
           spacing={4}
           minW='360px'
         >
-          <Image src={logo} />
-          <Heading color='#3C3030' fontSize={'3xl'}>
-            Barbearia Sabará
+          <Heading color='#3C3030' fontSize={'3xl'} as='u'>
+            Preencha as informações!
           </Heading>
 
           <VStack w='100%'>
+            <Input variant='outline' w='100%' type='text' placeholder='Nome Completo' />
             <Input variant='outline' w='100%' type='email' placeholder='Email' />
+            <Input variant='outline' w='100%' type='text' placeholder='CPF' />
+            <Input variant='outline' w='100%' type='number' placeholder='Celular' />
             <Input variant='outline' w='100%' type='password' placeholder='Senha' />
+            <Input variant='outline' w='100%' type='password' placeholder='Repetir senha' />
           </VStack>
 
           <Button
@@ -47,20 +46,12 @@ export const Login = () => {
             backgroundColor='#3C3030'
             _hover={{ backgroundColor: '#3C3030', opacity: '0.6' }}
           >
-            Entrar
-          </Button>
-          <Button
-            onClick={() => navigate('/registrar')}
-            className='btn btn-register'
-            width='100%'
-            color='white'
-            backgroundColor='#3C3030'
-            _hover={{ backgroundColor: '#3C3030', opacity: '0.6' }}
-          >
-            Registrar
+            Cadastrar
           </Button>
 
-          <Link alignSelf={'end'}>Esqueceu a senha</Link>
+          <Link alignSelf={'end'} onClick={() => navigate('/')}>
+            Voltar
+          </Link>
         </VStack>
       </Flex>
     </Flex>

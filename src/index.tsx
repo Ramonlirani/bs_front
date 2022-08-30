@@ -8,16 +8,16 @@ import '@fontsource/poppins/800.css'
 import '@fontsource/poppins/900.css'
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './theme'
-import { Login } from './screens/Login'
+import App from './App'
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <Login />
+      <App />
     </ChakraProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
 )

@@ -13,6 +13,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './theme'
 import App from './App'
 
+import { render } from 'react-dom'
+import Scheduler from './screens/Scheduler'
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
